@@ -1,4 +1,4 @@
-const DEFAULT_GRID = 100;
+const DEFAULT_GRID = 24;
 const CURRENT_COLOR = "black";
 
 const containerDiv = document.querySelector(".container");
