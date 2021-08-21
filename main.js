@@ -23,6 +23,14 @@ const newGrid = (value = DEFAULT_GRID, color = CURRENT_COLOR) => {
       },
       { once: true }
     );
+        box.addEventListener(
+          "touchstart",
+          () => {
+            box.classList.add("div2");
+            box.style.backgroundColor = checkColor(color);
+          },
+          { once: true }
+        );
   });
 };
 const clearCanva = () => {
@@ -77,6 +85,7 @@ const UpdateTextValue = (val)=>{
 const range = document.querySelector("#range")
 range.addEventListener("change",(e)=>{
   UpdateTextValue(e.target.value)
+  reloadCanva(e.target.value)
 })
 window.addEventListener("load", () => {
   newGrid();
