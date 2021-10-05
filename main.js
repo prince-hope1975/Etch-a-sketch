@@ -1,9 +1,9 @@
-const DEFAULT_GRID = 24;
-const CURRENT_COLOR = "black";
+const DEFAULT_GRID ={value: 24,color:"black"}
+// const CURRENT_COLOR = "black";
 
 const containerDiv = document.querySelector(".container");
 
-const newGrid = (value = DEFAULT_GRID, color = CURRENT_COLOR) => {
+const newGrid = (value = DEFAULT_GRID.value, color = DEFAULT_GRID.color) => {
   for (let i = 0; i < value * value; i++) {
     const div1 = document.createElement("div");
 
@@ -36,23 +36,24 @@ const newGrid = (value = DEFAULT_GRID, color = CURRENT_COLOR) => {
 const clearCanva = () => {
   containerDiv.innerHTML = " ";
 };
-const reloadCanva = (value = DEFAULT_GRID, value2 = CURRENT_COLOR) => {
+const reloadCanva = (value = DEFAULT_GRID.value, value2 = DEFAULT_GRID.color) => {
   clearCanva();
   newGrid(value, value2);
 };
 
 const clearBtn = document.querySelector(".btn");
 clearBtn.addEventListener("click", () => {
-  reloadCanva(DEFAULT_GRID);
+  reloadCanva(DEFAULT_GRID.value);
 });
 
 const rainbowBtn = document.querySelector(".rainbow");
 rainbowBtn.addEventListener("click", () => {
-  reloadCanva(DEFAULT_GRID, "rainbow");
+  DEFAULT_GRID.color= "rainbow"
+  reloadCanva();
 });
 const eraseBtn = document.querySelector(".erase");
 eraseBtn.addEventListener("click", () => {
-  newGrid(DEFAULT_GRID, "erase");
+  newGrid(DEFAULT_GRID.value, "erase");
 });
 
 const checkColor = (color) => {
@@ -78,6 +79,7 @@ const checkColor = (color) => {
 };
 const UpdateTextValue = (val)=>{
   console.log(val)
+  DEFAULT_GRID.value = val
   const textInput = document.querySelector("#textInput")
   textInput.value = val
   

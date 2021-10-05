@@ -29,10 +29,17 @@ body{
     background: rgb(0, 38, 255);
     /* background: blue; */
 }
+section{
+    display:flex;
+    justify-content:space-between;
+    width:70%;
+    max-width: 500px;
+    padding-top: 1rem;
+margin:auto}
 .btnContainer{
     /* height:3rem; */
     display:grid;
-    gap:0.2rem
+    gap:0.4rem
 
     /* background: #000; */
     /* overflow:auto;; */
@@ -43,7 +50,10 @@ body{
     border-radius: 3px;
     color: white;
     display: block;
-    font-size:1.1rem
+    font-size:1.1rem;
+    border-radius: 3px;
+    border: none;
+    max-width: 100px;
 }
 .btn:hover{
     transform: scaleX(1.01)
@@ -58,3 +68,12 @@ body{
 .canva{
 background: white;
 }
+input[type="text"]{
+    border: 0px;
+    text-align: center;
+    font-size:1.3rem;
+    outline: none;
+}
+.range{
+display:flex;
+flex-direction: column;}
